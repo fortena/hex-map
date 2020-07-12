@@ -3,7 +3,7 @@ export const matrix = ({ numRows, numCols }) => {
   for (let y = 0; y < numRows; y++) {
     const column = [];
     for (let x = 0; x < numCols; x++) {
-      column.push({ key: `${x},${y}`, x, y, type: 'ocean' });
+      column.push({ key: `${x},${y}`, x, y, terrain: 'ocean' });
     }
     rows.push(column);
   }

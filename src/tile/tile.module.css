@@ -1,7 +1,6 @@
 .hex {
 	width:150px;
 	height:86px;
-	background-color: aqua;
 	background-repeat: no-repeat;
   background-position: 50% 50%;
 	background-size: auto 173px;
@@ -15,6 +14,14 @@
 	text-align:center;
   zoom:1;
   z-index: 1;
+}
+
+.ocean {
+  background-color: aqua;
+}
+
+.grass{
+  background: green;
 }
 
 .hex .corner-1,
