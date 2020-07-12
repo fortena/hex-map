@@ -4,7 +4,9 @@ import classnames from 'classnames';
 import styles from './hex-row.module.css';
 
 const HexRow = ({ children, shiftLeft }) => (
-  <div className={classnames({ [styles['shift-left']]: shiftLeft })}>{children}</div>
+  <div className={classnames(styles['hex-row'], { [styles['shift-left']]: shiftLeft })}>
+    {children}
+  </div>
 );
 
 HexRow.displayName = 'HexRow';

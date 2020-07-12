@@ -5,7 +5,7 @@ import Tile from './tile/Tile';
 import { matrix } from './utils';
 
 const localMap = JSON.parse(localStorage.getItem('hex-map'));
-const initMapMatrix = localMap || matrix({ numRows: 7, numCols: 10 });
+const initMapMatrix = localMap || matrix({ numRows: 20, numCols: 20 });
 
 const updateTerrain = (currentTerrain) => {
   switch (currentTerrain) {
