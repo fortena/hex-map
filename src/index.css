@@ -16,3 +16,8 @@ html, body, #root {
   min-height: 100%;
   height: auto;
 }
+
+:root {
+  --zoom: 1;
+  /* --zoom: 0.5; */
+}

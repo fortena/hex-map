@@ -1,28 +1,80 @@
 .hex {
-	width:150px;
-	height:86px;
+	width: calc(var(--zoom) * 150px);
+	height: calc(var(--zoom) * 86px);
 	background-repeat: no-repeat;
   background-position: 50% 50%;
-	background-size: auto 173px;
-	-webkit-background-size: auto 173px;
-	-moz-background-size: auto 173px;
-	-ms-background-size: auto 173px;
-	-o-background-size: auto 173px;
+	background-size: auto calc(var(--zoom) * 173px);
+	-webkit-background-size: auto calc(var(--zoom) * 173px);
+	-moz-background-size: auto calc(var(--zoom) * 173px);
+	-ms-background-size: auto calc(var(--zoom) * 173px);
+	-o-background-size: auto calc(var(--zoom) * 173px);
 	position: relative;
 	float:left;
-	margin:25px 5px;
+	margin:calc(var(--zoom) *25px) calc(var(--zoom) * 5px);
 	text-align:center;
   zoom:1;
   z-index: 1;
 }
 
 .ocean {
-  background-color: aqua;
+  background: rgb(42, 236, 227);
 }
 
-.grass{
+/* .sand {
+  background: rgb(255, 219, 59);
+}
+
+.grass {
+  background: rgb(42, 236, 42);
+}
+
+.forrest {
+  background: rgb(32, 112, 32);
+}
+
+.mountain {
+  background: gray;
+}
+
+.ice {
+  background: #fdecec;;
+}
+
+.water {
+  background: aqua;
+} */
+
+/* temp */
+
+.red {
+ background: red;
+}
+
+.orange {
+  background: orange;
+}
+
+.yellow {
+  background: yellow;
+}
+
+.green {
   background: green;
 }
+
+.blue {
+  background: blue;
+}
+
+.purple {
+  background: purple;
+}
+
+.pink {
+  background: deeppink;
+}
+
+/* temp stops */
 
 .hex .corner-1,
 .hex .corner-2 {
@@ -60,8 +112,8 @@
 
 .hex .corner-1:before,
 .hex .corner-2:before {
-  width: 173px;
-  height:	173px;
+  width: calc(var(--zoom) * 173px);
+  height:	calc(var(--zoom) * 173px);
   content: '';
   position: absolute;
   background: inherit;
@@ -79,11 +131,11 @@
 
 
 .hex .corner-1:before {
-  -webkit-transform: rotate(-60deg) translate(-87px, 0px);
-  -moz-transform: rotate(-60deg) translate(-87px, 0px);
-  -ms-transform: rotate(-60deg) translate(-87px, 0px);
-  -o-transform: rotate(-60deg) translate(-87px, 0px);
-  transform: rotate(-60deg) translate(-87px, 0px);
+  -webkit-transform: rotate(-60deg) translate(calc(var(--zoom) * -87px), 0px);
+  -moz-transform: rotate(-60deg) translate(calc(var(--zoom) * -87px), 0px);
+  -ms-transform: rotate(-60deg) translate(calc(var(--zoom) * -87px), 0px);
+  -o-transform: rotate(-60deg) translate(calc(var(--zoom) * -87px), 0px);
+  transform: rotate(-60deg) translate(calc(var(--zoom) * -87px), 0px);
   -webkit-transform-origin: 0 0;
   -moz-transform-origin: 0 0;
   -ms-transform-origin: 0 0;
@@ -92,10 +144,10 @@
 }
 
 .hex .corner-2:before {
-  -webkit-transform: rotate(60deg) translate(-48px, -11px);
-  -moz-transform: rotate(60deg) translate(-48px, -11px);
-  -ms-transform: rotate(60deg) translate(-48px, -11px);
-  -o-transform: rotate(60deg) translate(-48px, -11px);
-  transform: rotate(60deg) translate(-48px, -11px);
+  -webkit-transform: rotate(60deg) translate(calc(var(--zoom) * -48px), calc(var(--zoom) * -11px));
+  -moz-transform: rotate(60deg) translate(calc(var(--zoom) * -48px), calc(var(--zoom) * -11px));
+  -ms-transform: rotate(60deg) translate(calc(var(--zoom) * -48px), calc(var(--zoom) * -11px));
+  -o-transform: rotate(60deg) translate(calc(var(--zoom) * -48px), calc(var(--zoom) * -11px));
+  transform: rotate(60deg) translate(calc(var(--zoom) * -48px), calc(var(--zoom) * -11px));
   bottom:0;
 }

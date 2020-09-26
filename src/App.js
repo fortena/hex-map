@@ -1,46 +1,32 @@
-import React, { useState } from 'react';
-import HexMap from './hexMap/HexMap';
-import HexRow from './hexRow/HexRow';
-import Tile from './tile/Tile';
-import { matrix } from './utils';
+import React from 'react';
+// import { gridPoints } from './hex/utils';
+import { gridPoints } from './hexagon/flatTop';
+import Hexagon from './hexagon/Hexagon';
 
-const localMap = JSON.parse(localStorage.getItem('hex-map'));
-const initMapMatrix = localMap || matrix({ numRows: 20, numCols: 20 });
+const TILE_SIZE = 10;
+const COLUMNS = 100;
+const ROWS = 100;
 
-const updateTerrain = (currentTerrain) => {
-  switch (currentTerrain) {
-    case 'ocean':
-      return 'grass';
-    case 'grass':
-      return 'ocean';
-    default:
-      return 'ocean';
-  }
-};
+const SQRT3 = Math.sqrt(3);
+const shortDiagonal = SQRT3 * TILE_SIZE;
+const rowHeight = shortDiagonal / 2;
+const HEIGHT_MARGIN = 1;
+const height = HEIGHT_MARGIN + rowHeight + rowHeight * ROWS;
+
+const columnWidth = 3 * TILE_SIZE;
+const WIDTH_MARGIN = 2;
+const width = WIDTH_MARGIN + TILE_SIZE / 2 + columnWidth * COLUMNS;
 
 const App = () => {
-  const [mapMatrix, setMapMatrix] = useState(initMapMatrix);
+  const grid = gridPoints({ size: TILE_SIZE, columns: COLUMNS, rows: ROWS });
+  const hexes = grid.map(({ x, y, points }) => (
+    <Hexagon key={`${x},${y}`} x={x} y={y} points={points} fill="white" stroke="black" />
+  ));
+
   return (
-    <HexMap>
-      {mapMatrix.map((rows, i) => (
-        <HexRow key={i} shiftLeft={i % 2 === 1}>
-          {rows.map(({ key, terrain, x, y }) => (
-            <Tile
-              key={key}
-              x={x}
-              y={y}
-              terrain={terrain}
-              onClick={() => {
-                const updatedMap = [...mapMatrix];
-                updatedMap[y][x].terrain = updateTerrain(terrain);
-                setMapMatrix(updatedMap);
-                localStorage.setItem('hex-map', JSON.stringify(updatedMap));
-              }}
-            />
-          ))}
-        </HexRow>
-      ))}
-    </HexMap>
+    <svg width={`${width}`} height={`${height}`}>
+      {hexes}
+    </svg>
   );
 };
 

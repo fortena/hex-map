@@ -2,5 +2,5 @@
 }
 
 .shift-left {
-  margin-left: 80px;
+  margin-left: calc(var(--zoom) * 80px);
 }

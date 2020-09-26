@@ -1,7 +1,7 @@
 .hex-map {
   height: 100%;
   background: darkcyan;
-  padding-top: 25px;
+  padding-top: calc(var(--zoom) * 25px);
   width: max-content;
   overflow: hidden;
 }
